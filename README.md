@@ -23,7 +23,17 @@ If not, it was compiled to a vthread-style go block.
 ## Run from compiled 
 
 ```
-clj -M:test:nosrc use-alts|flood
+clj -M:test:nosrc use-alts|flood*
 ```
 
 Default is running with go blocks only.
+
+## Monitoring
+
+To capture a GC histogram:
+
+    jcmd PID GC.class_histogram | head
+
+To start a recording:
+
+    jcmd PID JFR.start name=leak settings=profile duration=5m filename=/tmp/leak.jfr include=OldObjectSample
