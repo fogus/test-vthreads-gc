@@ -22,11 +22,13 @@ If not, it was compiled to a vthread-style go block.
 
 ## Run from compiled 
 
-```
-clj -M:test:nosrc use-alts|flood*
-```
+    clj -M:test:nosrc use-alts|flood*
 
-Default is running with go blocks only.
+Default is running with go blocks code only.
+
+## Run from source
+
+    clj -M:test
 
 ## Monitoring
 
