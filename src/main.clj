@@ -146,7 +146,9 @@
     (println (format "Testbed started: %d workers/sec, max %d concurrent" rate max-concurrent))
     control-ch))
 
-(defn flood []
+(defn flood
+  "Repro case."
+  []
   (let [c (chan)]
     (dotimes [_ 1000]
       (go (<!! c)))))
