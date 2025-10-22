@@ -159,9 +159,9 @@
            stats-interval 5000}
       :as opts}]
   (case mode
-    "use-alts" (apply testbed-simple (apply concat opts))
+    "use-alts" (testbed-simple opts)
     "flood" (dotimes [_ 10] (flood))
-    (apply testbed-with-alts (apply concat opts))))
+    (testbed-with-alts opts)))
 
 (defn stop-testbed
   [control-ch]
